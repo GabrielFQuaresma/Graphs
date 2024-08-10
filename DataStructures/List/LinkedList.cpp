@@ -1,4 +1,5 @@
 #include "../Cell/Cell.cpp"
+#include <iostream>
 
 template <typename T>
 
@@ -149,8 +150,8 @@ class LinkedList{
         if (first == nullptr) throw std::runtime_error("Error: Empty List.");
 
         Cell<T>* temp = first;
-        bool findIt = false;
-        while(temp->next != nullptr){
+        bool findIt = (temp->value == value); //Está aqui para testar o primeiro termo numa lista com só um elemento
+        while(temp->next != nullptr && findIt == false){
             if(temp->value == value) findIt = true;
             temp = temp->next;
         }
