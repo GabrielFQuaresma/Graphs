@@ -3,7 +3,7 @@ template <typename T>
 
 class Queue {
 private:
-    LinkedList<T> list; // Não tenho certeza se precisa ser ponteiro
+    LinkedList<T> list; 
 
 public:
     Queue() = default;
