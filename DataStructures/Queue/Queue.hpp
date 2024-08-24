@@ -1,4 +1,4 @@
-#include "../List/LinkedList.cpp"
+#include "../List/LinkedList.hpp"
 template <typename T>
 
 class Queue {

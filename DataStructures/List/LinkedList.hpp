@@ -1,4 +1,4 @@
-#include "../Cell/Cell.cpp"
+#include "../Cell/Cell.hpp"
 #include <iostream>
 
 template <typename T>

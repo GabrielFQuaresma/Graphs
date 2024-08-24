@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Stack.cpp" // Inclua o arquivo da pilha
+#include "Stack.hpp" // Inclua o arquivo da pilha
 
 int main() {
     Stack<int> stack;

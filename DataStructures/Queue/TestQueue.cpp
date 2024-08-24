@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Queue.cpp" // Inclua o arquivo de implementação da fila
+#include "Queue.hpp" // Inclua o arquivo de implementação da fila
 
 int main() {
     // Cria uma fila de inteiros

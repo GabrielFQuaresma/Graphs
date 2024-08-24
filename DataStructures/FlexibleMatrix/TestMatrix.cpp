@@ -1,5 +1,5 @@
 #include <iostream>
-#include "FlexibleMatrix.cpp" 
+#include "FlexibleMatrix.hpp" 
 
 int main() {
     // Criando uma matriz 3x3 de inteiros
