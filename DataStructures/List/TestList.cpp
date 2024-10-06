@@ -1,43 +1,62 @@
-#include "LinkedList.hpp"
 #include <iostream>
+#include "LinearList.hpp"
+
 
 int main() {
-    LinkedList<int> list;
+    // Testando o construtor padrão
+    LinearList<int> list1;
 
-    // Testando inserções
-    list.pushFront(10);
-    list.pushFront(20);
-    list.pushBack(30);
-    list.insert(25, 2);
+    // Testando a inserção de elementos
+    list1.pushBack(10);
+    list1.pushBack(20);
+    list1.pushBack(30);
 
-    std::cout << "Lista após inserções: ";
-    list.printList();  // Deve mostrar: 20, 10, 25, 30
+    std::cout << "List 1 após pushBack(10), pushBack(20), pushBack(30): " << list1 << std::endl;
 
-    // Testando remoções
-    list.popFront();
-    std::cout << "Lista após popFront(): ";
-    list.printList();  // Deve mostrar: 10, 25, 30
+    // Testando o método de popBack
+    list1.popBack();
+    std::cout << "List 1 após popBack: " << list1 << std::endl;
 
-    list.popBack();
-    std::cout << "Lista após popBack(): ";
-    list.printList();  // Deve mostrar: 10, 25
+    // Testando pushFront e popFront
+    list1.pushFront(5);
+    std::cout << "List 1 após pushFront(5): " << list1 << std::endl;
 
-    list.remove(0);
-    std::cout << "Lista após remover a posição 0: ";
-    list.printList();  // Deve mostrar: 25
+    list1.popFront();
+    std::cout << "List 1 após popFront: " << list1 << std::endl;
 
-    // Testando busca
-    bool found = list.search(25);
-    std::cout << "O valor 25 está na lista? " << (found ? "Sim" : "Não") << std::endl;
+    // Testando inserção em posição específica
+    list1.insert(25, 1);
+    std::cout << "List 1 após insert(25, 1): " << list1 << std::endl;
 
-    found = list.search(10);
-    std::cout << "O valor 10 está na lista? " << (found ? "Sim" : "Não") << std::endl;
+    // Testando acesso direto via operador []
+    std::cout << "Elementos individuais: " << list1[0] << ", " << list1[1] << std::endl;
 
-    // Testando tamanho
-    std::cout << "Tamanho da lista: " << list.size() << std::endl;  // Deve mostrar: 1
+    // Testando remoção de posição específica
+    list1.remove(1);
+    std::cout << "List 1 após remove(1): " << list1 << std::endl;
 
-    // Testando se a lista está vazia
-    std::cout << "A lista está vazia? " << (list.isEmpty() ? "Sim" : "Não") << std::endl;  // Deve mostrar: Não
+    // Testando comparação de listas
+    LinearList<int> list2;
+    list2.pushBack(10);
+    list2.pushBack(20);
+    
+    if (list1 == list2) {
+        std::cout << "List 1 é igual à List 2" << std::endl;
+    } else {
+        std::cout << "List 1 é diferente de List 2" << std::endl;
+    }
+
+    // Testando o construtor de intervalo
+    LinearList<int> list3(5, 10);
+    std::cout << "List 3 (construtor de intervalo [5,10]): " << list3 << std::endl;
+
+    // Testando redimensionamento manual
+    list3.reserve(20);
+    std::cout << "List 3 após reserve(20): " << list3 << std::endl;
+
+    // Testando o método shrink_to_fit
+    list3.shrink_to_fit();
+    std::cout << "List 3 após shrink_to_fit(): " << list3 << std::endl;
 
     return 0;
 }
